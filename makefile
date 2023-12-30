@@ -10,6 +10,10 @@ endif
 VulkanTest: main.cc
 	g++ $(CFLAGS) -o VulkanTest main.cc $(LDFLAGS)
 
+compile_shaders: shader.vert shader.frag
+	glslc shader.vert -o vert.spv
+	glslc shader.frag -o frag.spv
+
 .PHONY: test clean
 
 test: VulkanTest
