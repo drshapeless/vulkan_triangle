@@ -10,9 +10,12 @@ endif
 VulkanTest: main.cc
 	g++ $(CFLAGS) -o VulkanTest main.cc $(LDFLAGS)
 
+VulkanTest_bak: main.bak.cc
+	g++ $(CFLAGS) -o VulkanTest main.bak.cc $(LDFLAGS)
+
 compile_shaders: shader.vert shader.frag
-	glslc shader.vert -o vert.spv
-	glslc shader.frag -o frag.spv
+	glslc shader.vert -o shaders/vert.spv
+	glslc shader.frag -o shaders/frag.spv
 
 .PHONY: test clean
 
